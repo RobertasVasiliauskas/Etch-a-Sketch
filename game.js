@@ -1,11 +1,11 @@
-
 const grid = document.querySelector(".grid");
 let size;
-function generateGrid(number){
+
+function generateGrid(number) {
     const set = document.querySelectorAll("#tile")
 
     let width = (680 / number);
-    let height = (680 /number);
+    let height = (680 / number);
 
     for (let i = 0; i < set.length; i++) {
         document.getElementById("tile").remove();
@@ -27,23 +27,8 @@ function generateGrid(number){
 
 const buttonErase = document.querySelector("#newGrid")
 {
-    buttonErase.addEventListener("click", () =>{
-        size = parseInt(prompt())
-        generateGrid(size);
-
-        const tileToDraw = document.querySelectorAll(".grid > div");
-        tileToDraw.forEach((item) => {
-            item.addEventListener("mouseenter", (e) => {
-                e.target.style.backgroundColor = "black";
-            });
-        });
-        }
-    )
-}
-
-const buttonNewGRid = document.querySelector("#eraseGrid")
-{
-    buttonNewGRid.addEventListener("click", () =>{
+    buttonErase.addEventListener("click", () => {
+            size = parseInt(prompt())
             generateGrid(size);
 
             const tileToDraw = document.querySelectorAll(".grid > div");
@@ -55,4 +40,32 @@ const buttonNewGRid = document.querySelector("#eraseGrid")
         }
     )
 }
+
+const buttonNewGrid = document.querySelector("#eraseGrid")
+{
+    buttonNewGrid.addEventListener("click", () => {
+            generateGrid(size);
+
+            const tileToDraw = document.querySelectorAll(".grid > div");
+            tileToDraw.forEach((item) => {
+                item.addEventListener("mouseenter", (e) => {
+                    e.target.style.backgroundColor = "black";
+                });
+            });
+        }
+    )
+}
+
+function defaultGrid() {
+    generateGrid(16)
+
+    const tileToDraw = document.querySelectorAll(".grid > div");
+    tileToDraw.forEach((item) => {
+        item.addEventListener("mouseenter", (e) => {
+            e.target.style.backgroundColor = "black";
+        });
+    });
+}
+
+defaultGrid();
 
