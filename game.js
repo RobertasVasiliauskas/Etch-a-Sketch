@@ -23,48 +23,35 @@ function generateGrid(number) {
         grid.appendChild(createGrid);
     }
 
-}
-
-const buttonErase = document.querySelector("#newGrid")
-{
-    buttonErase.addEventListener("click", () => {
-            size = parseInt(prompt())
-            generateGrid(size);
-
-            const tileToDraw = document.querySelectorAll(".grid > div");
-            tileToDraw.forEach((item) => {
-                item.addEventListener("mouseenter", (e) => {
-                    e.target.style.backgroundColor = "black";
-                });
-            });
-        }
-    )
-}
-
-const buttonNewGrid = document.querySelector("#eraseGrid")
-{
-    buttonNewGrid.addEventListener("click", () => {
-            generateGrid(size);
-
-            const tileToDraw = document.querySelectorAll(".grid > div");
-            tileToDraw.forEach((item) => {
-                item.addEventListener("mouseenter", (e) => {
-                    e.target.style.backgroundColor = "black";
-                });
-            });
-        }
-    )
-}
-
-function defaultGrid() {
-    generateGrid(16)
-
-    const tileToDraw = document.querySelectorAll(".grid > div");
+    let tileToDraw = document.querySelectorAll(".grid > div");
     tileToDraw.forEach((item) => {
         item.addEventListener("mouseenter", (e) => {
             e.target.style.backgroundColor = "black";
         });
     });
+
+}
+
+const buttonNewGrid = document.querySelector("#newGrid")
+{
+    buttonNewGrid.addEventListener("click", () => {
+            size = parseInt(prompt())
+            generateGrid(size);
+        }
+    )
+}
+
+const buttonErase = document.querySelector("#eraseGrid")
+{
+    buttonErase.addEventListener("click", () => {
+            generateGrid(size);
+        }
+    )
+}
+
+function defaultGrid() {
+    size = 16;
+    generateGrid(size)
 }
 
 defaultGrid();
