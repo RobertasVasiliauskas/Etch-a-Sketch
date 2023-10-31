@@ -1,5 +1,6 @@
 
 const grid = document.querySelector(".grid");
+let size;
 function generateGrid(number){
     const set = document.querySelectorAll("#tile")
 
@@ -24,10 +25,11 @@ function generateGrid(number){
 
 }
 
-const button = document.querySelector("#newGrid")
+const buttonErase = document.querySelector("#newGrid")
 {
-    button.addEventListener("click", () =>{
-        generateGrid(parseInt(prompt()));
+    buttonErase.addEventListener("click", () =>{
+        size = parseInt(prompt())
+        generateGrid(size);
 
         const tileToDraw = document.querySelectorAll(".grid > div");
         tileToDraw.forEach((item) => {
@@ -39,4 +41,18 @@ const button = document.querySelector("#newGrid")
     )
 }
 
+const buttonNewGRid = document.querySelector("#eraseGrid")
+{
+    buttonNewGRid.addEventListener("click", () =>{
+            generateGrid(size);
+
+            const tileToDraw = document.querySelectorAll(".grid > div");
+            tileToDraw.forEach((item) => {
+                item.addEventListener("mouseenter", (e) => {
+                    e.target.style.backgroundColor = "black";
+                });
+            });
+        }
+    )
+}
 
