@@ -10,9 +10,24 @@ body{
     align-items: center;
 }
 
+header{
+
+}
+
+main{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+footer{
+
+}
+
 .game{
     width: 650px;
-    height: 544px;
+    height: 750px;
 }
 
 .controls{
