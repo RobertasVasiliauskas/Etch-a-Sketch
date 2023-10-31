@@ -1,26 +1,41 @@
+
 const grid = document.querySelector(".grid");
-function addTile() {
-    for (let i = 1; i <= (16*16); i++) {
+function generateGrid(number){
+    const set = document.querySelectorAll("#tile")
 
-        let tile = document.createElement("div");
-        tile.style.height = "32px";
-        tile.style.width = "32px";
-        tile.style.border = "1px"
-        tile.style.borderStyle = "solid";
+    let width = (680 / number);
+    let height = (680 /number);
 
-        grid.appendChild(tile);
+    for (let i = 0; i < set.length; i++) {
+        document.getElementById("tile").remove();
     }
+
+    for (let i = 0; i < number * number; i++) {
+
+        let createGrid = document.createElement("div")
+
+        createGrid.setAttribute("id", "tile");
+        createGrid.style.height = `${height}px`;
+        createGrid.style.width = `${width}px`;
+
+
+        grid.appendChild(createGrid);
+    }
+
 }
 
-addTile();
+const button = document.querySelector("#newGrid")
+{
+    button.addEventListener("click", (e) =>{
+        generateGrid(parseInt(prompt()));
 
-
-
-const tileToDraw = document.querySelectorAll(".grid > div");
-tileToDraw.forEach((item) => {
-    item.addEventListener("mouseenter", (e) => {
-        e.target.style.backgroundColor = "black";
-    });
-});
-
+        const tileToDraw = document.querySelectorAll(".grid > div");
+        tileToDraw.forEach((item) => {
+            item.addEventListener("mouseenter", (e) => {
+                e.target.style.backgroundColor = "black";
+            });
+        });
+        }
+    )
+}
 
