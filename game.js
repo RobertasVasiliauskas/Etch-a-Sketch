@@ -26,7 +26,7 @@ function generateGrid(number){
 
 const button = document.querySelector("#newGrid")
 {
-    button.addEventListener("click", (e) =>{
+    button.addEventListener("click", () =>{
         generateGrid(parseInt(prompt()));
 
         const tileToDraw = document.querySelectorAll(".grid > div");
@@ -38,4 +38,5 @@ const button = document.querySelector("#newGrid")
         }
     )
 }
+
 
