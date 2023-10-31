@@ -1,8 +1,16 @@
-const grid = document.querySelector(".grid")
+const grid = document.querySelector(".grid");
+function addTile() {
+    for (let i = 1; i <= (16*16); i++) {
 
-for (let i = 1; i <= 16; i++) {
-    for (let j = 1; j <= 16; j++) {
-        const tile = document.createElement("div")
-        grid.appendChild(tile)
+        let tile = document.createElement("div");
+        tile.className = "tile";
+        tile.style.height = "32px";
+        tile.style.width = "32px";
+        tile.style.border = "1px"
+        tile.style.borderStyle = "solid";
+
+        grid.appendChild(tile);
     }
 }
+
+addTile();
